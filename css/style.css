@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Righteous", sans-serif;
+  display: grid;
+  grid-template: auto auto auto / auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2cc8f;
+}
+
+/*--------------------------------------------------GameBoard--------------------------------------------------*/
+#gameBoard {
+  max-width: 700px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/*--------------------------------------------------Tittles--------------------------------------------------*/
+.top,
+.bottom {
+  color: #3d405b;
+  font-size: 60px;
+  text-shadow: 5px 5px 10px rgba(107, 112, 92, 0.7);
+}
+
+.bottom {
+  text-align: end;
+}
+
+/*--------------------------------------------------Card--------------------------------------------------*/
+.card {
+  width: 110px;
+  height: 110px;
+  position: relative;
+
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 0.5s;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card_back,
+.card_front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(107, 112, 92, 0.7);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card_front {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #3d405b;
+}
+
+.card_back {
+  color: #f4f1de;
+  background-color: #2a9d8f;
+  font-size: 30px;
+  /* display: none; */
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.flip {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/*--------------------------------------------------Options--------------------------------------------------*/
+#gameOver {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 50px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+}
+
+#restart {
+  padding: 20px;
+  font-size: 20px;
+  font-family: "Righteous", sans-serif;
+  background-color: #e9c46a;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/*--------------------------------------------------Responsive--------------------------------------------------*/
+@media only screen and (max-width: 700px) {
+  .card {
+    width: 80px;
+    height: 80px;
+  }
+  .card_back {
+    font-size: 20px;
+  }
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .top,
+  .bottom {
+    font-size: 40px;
+  }
+  #gameBoard {
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  }
+  .card {
+    width: 60px;
+    height: 60px;
+  }
+  .card_back {
+    font-size: 15px;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #gameBoard {
+    gap: 10px;
+  }
+}
