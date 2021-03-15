@@ -92,7 +92,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   display: none;
   justify-content: center;
   align-items: center;
@@ -123,15 +123,22 @@ body {
     width: 60px;
     height: 60px;
   }
+  #gameOver {
+    font-size: 30px;
+  }
+  #restart {
+    padding: 15px;
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width: 550px) {
+  #gameBoard {
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  }
   .top,
   .bottom {
     font-size: 40px;
-  }
-  #gameBoard {
-    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
   }
   .card {
     width: 60px;
@@ -144,10 +151,20 @@ body {
     width: 40px;
     height: 40px;
   }
+  #gameOver {
+    font-size: 20px;
+  }
+  #restart {
+    padding: 10px;
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 350px) {
   #gameBoard {
     gap: 10px;
+  }
+  #gameOver {
+    font-size: 15px;
   }
 }
